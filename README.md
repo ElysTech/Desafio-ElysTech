@@ -3,6 +3,8 @@
 ### Ambiente de Desenvolvimento
 [CONFIG](./CONFIG.md)
 
+Faça um fork desse projeto, coloque seu nome na branch `git checkout -b seuNome` e faça um pull request com a sua entrega
+
 ### Desafio: Desenvolvimento de Aplicação de Gestão de Alunos para Academia
 
 #### Nível: Iniciante
@@ -54,3 +56,5 @@
 * Será avialiado código limpo, pensamento crítico, domínio sobre Programação Orientada a Objetos (Herança, Polimorfismo, Encapsulamento, Abstração, Injeção e Inversão de Dependencias).
 
 * Será avaliado montagem de queries (complexidade e simplicidade).
+
+* Separação dos commits e semantica de commit
