@@ -17,7 +17,11 @@ class ExampleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nome' => fake()->name(),
+            'altura' => fake()->numberBetween(1.00, 1.70),
+            'genero' => fake()->randomElement(['M', 'F']),
+            'peso' => fake()->numberBetween(50, 200),
+            'isActive' => fake()->boolean()
         ];
     }
 }
