@@ -1,7 +1,7 @@
 # Início 15/04/2024 | Entrega 29/04/2024
 
 ### Ambiente de Desenvolvimento
-[CONFIG](./CONFIG.md)
+**IMPORTANTE !!** ->  [CONFIG](./CONFIG.md) <-
 
 Faça um fork desse projeto, coloque seu nome na branch `git checkout -b seuNome` e faça um pull request com a sua entrega
 
