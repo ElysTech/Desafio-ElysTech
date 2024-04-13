@@ -41,6 +41,8 @@ Faça um fork desse projeto, coloque seu nome na branch `git checkout -b seuNome
 7.  **Gestão de Aulas:**
     
     -   Implemente funcionalidades para marcar e gerenciar as aulas oferecidas pela academia.
+    * * Por exemplo, quantidade de alunos que compareceram nessa aula
+    * * Dashboard para mostrar os alunos que compareceram, não será necessário front-end dessa feature, somente um endpoint com essa consulta. Quanto mais criatividade melhor.
     -   Permita que os alunos possam se inscrever e cancelar a participação em aulas.
 
 # Requisitos
