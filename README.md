@@ -53,6 +53,10 @@ Faça um fork desse projeto, coloque seu nome na branch `git checkout -b seuNome
 * * Exemplo 1: uma consulta que mostre se o usuário é ativo ou não na Academia, verificando a recorrencia dele sobre as aulas.
 * * Exemplo 2: uma consulta que verifique o aniversário do aluno, para envio de promoções (não será necessário implementar esse serviço de envio de promoções, somente a consulta). Observando que, se estamos em Janeiro e usuário X faz aniversánio no mês de Fevereiro, essa ação já deve estar contemplada antes do aniversário do usuário X.
 * * Ou seja, eu como usuário, desejo uma promoção de aniversário, mas se essa promoção me avisar no mesmo dia, eu não me programei para essa promoção, logo eu a perdi, então é interessante considerar, um mês de antecêdencia para programação do usuário.
+* Validações dos campos na requisição
+* * Se é requerido, se é do tipo esperado, se atingiu o máximo de caracteres.
+* Validações de genero, se é do tipo M para Masculino, F para Feminino, N para Neutro, X para não quer selecionar.
+* * Exemplo: "M", "F", "N", "X"
 
 # Avaliações
 * Será avialiado código limpo, pensamento crítico, domínio sobre Programação Orientada a Objetos (Herança, Polimorfismo, Encapsulamento, Abstração, Injeção e Inversão de Dependencias).
