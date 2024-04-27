@@ -17,9 +17,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'status',
     ];
 
     /**
@@ -31,6 +32,21 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function alunos()
+    {
+      return $this->hasMany(Aluno::class);
+    }
+
+    public function estafes()
+    {
+      return $this->hasMany(Estafes::class);
+    }
+
+    public function instrutores()
+    {
+      return $this->hasMany(Instrutores::class);
+    }
 
     /**
      * Get the attributes that should be cast.
