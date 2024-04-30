@@ -65,9 +65,35 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'username' => 'nullable|string|min:4|max:50',
+            'email' => 'nullable|email|unique:users,email,' . $user->id,
+            'password' => 'nullable|min:6|max:50',
+            'type' => 'nullable|string|max:1|in:' . implode(',', array_keys(User::$tipos_usuarios)),
+            'status' => 'required|numeric|max:1',
+        ]);
+
+        if($validator->fails()) {
+            return $this->error('Validation failed', 422, $validator->errors());
+        }
+
+        $validated = $validator->validated();
+
+        $updated = $user->update([
+            'username' => $validated['username'],
+            'email' => $validated['email'],
+            'password' => $validated['password'],
+            'type' => $validated['type'],
+            'status' => $validated['status'],
+        ]);
+
+        if($updated) {
+            return $this->response('User updated', 200, new UserResource($user));
+        }
+
+        return $this->error('User not updated', 400);
     }
 
     /**
