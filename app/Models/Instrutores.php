@@ -18,6 +18,7 @@ class Instrutores extends Model
         'nome',
         'sobrenome',
         'genero',
+        'data_nascimento',
         'status',
     ];
 

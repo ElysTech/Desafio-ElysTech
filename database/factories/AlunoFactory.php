@@ -19,7 +19,7 @@ class AlunoFactory extends Factory
         return [
             'nome' => fake()->firstName(),
             'sobrenome' => fake()->lastName(),
-            'data_nascimento' => fake()->dateTime($startDate = '-70 years', $timezone = NULL)->format('Y-m-d'),
+            'data_nascimento' => fake()->dateTimeBetween('-70 year', '-10 year')->format('Y-m-d'),
             'genero' => fake()->randomElement(['M', 'F', 'X']),
             'status' => 1,
         ];

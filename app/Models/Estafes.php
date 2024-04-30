@@ -18,6 +18,7 @@ class Estafes extends Model
         'nome',
         'sobrenome',
         'genero',
+        'data_nascimento',
         'status',
     ];
 

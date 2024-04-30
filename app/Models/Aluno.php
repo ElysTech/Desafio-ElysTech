@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Aluno extends Model
 {
     use HasFactory;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -17,6 +18,7 @@ class Aluno extends Model
         'nome',
         'sobrenome',
         'genero',
+        'data_nascimento',
         'status',
     ];
 
