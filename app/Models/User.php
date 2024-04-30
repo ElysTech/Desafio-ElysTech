@@ -24,6 +24,12 @@ class User extends Authenticatable
         'status',
     ];
 
+    public static array $tipos_usuarios = [
+        'A' => 'Aluno',
+        'I' => 'Instrutor',
+        'E' => 'Estafe'
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *
