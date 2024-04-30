@@ -5,11 +5,15 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\v1\UserResource;
 use App\Models\User;
+use App\Traits\Api\v1\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
+    use HttpResponses;
+
     /**
      * Display a listing of the resource.
      */
@@ -32,19 +36,22 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-           return response()->json(['error' => [$validator->errors()]], 422);
+            // return response()->json(['error' => [$validator->errors()]], 422);   ##  retorno simples
+            return $this->error('Invalid Data', 422, $validator->errors());   ## retorno usando Trait HttpResponses
         }
-
+ 
         $created = User::create($validator->validated());
-
+ 
         if($created) {
-            return response()->json([
-               'message' => 'User created',
-               'data' => new UserResource($created),
-            ], 201);
+            return $this->response('User created', 201, new UserResource($created));   ## retorno usando Trait HttpResponses
+            // return response()->json([
+            //     'message' => 'User created',        ##  retorno simples
+            //     'data' => new UserResource($created),
+            // ], 201);
         }
-
-        return response()->json(['error' => 'User not created'], 400);
+ 
+        // return response()->json(['error' => 'Invoice not created'], 400);    ##  retorno simples
+        return $this->error('User not created', 400);
     }
 
     /**
